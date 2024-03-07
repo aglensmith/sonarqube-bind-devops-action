@@ -1,0 +1,37 @@
+name: 'sonarqube-bind-devops-action'
+description: 'Configures DevOps integration in SonarQube'
+inputs:
+  sonarHostUrl:
+    description: 'SonarQube host URL'
+    required: true
+    default: ''
+  sonarToken:
+    description: 'Sonar Web API token'
+    required: true
+    default: ''
+  almSetting:
+    description: 'GitHub setting key'
+    required: true
+    default: ''
+  project:
+    description: 'SonarQube Project key'
+    required: true
+    default: ''
+  repository:
+    description: 'GitHub repository'
+    required: true
+    default: ''
+  summaryCommentEnabled:
+    description: 'Enable/disable summary in PR discussion tab'
+    required: true
+    default: 'true'
+  monorepo:
+    description: 'Is the proejct part of a monorepo'
+    required: true
+    default: 'false'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'node20'
+  main: 'index.js'
